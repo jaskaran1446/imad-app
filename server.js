@@ -21,6 +21,33 @@ var articleOneContent = {
                 </p>`
 };
 
+var articleTwoContent = {
+  title: "Article Two | Jaskaran",
+  heading: "Article Two",
+  date: "20/8/2017",
+  content: `
+                <p>
+                    This is the content for article two. This is the content for article two. This is the content for article two. 
+                </p>
+                <p>
+                    This is the content for article two. This is the content for article two. This is the content for article two. 
+                </p>`
+};
+
+var articleThreeContent = {
+  title: "Article Three | Jaskaran",
+  heading: "Article Three",
+  date: "19/8/2017",
+  content: `
+                <p>
+                    This is the content for article three. This is the content for article three. This is the content for article three. 
+                </p>
+                <p>
+                    This is the content for article three. This is the content for article three. This is the content for article three. 
+                </p>`
+};
+
+
 function getHtml(data){
     title = data.title;
     heading = data.heading;
@@ -62,11 +89,11 @@ app.get('/article-one', function (req, res) {
 });
 
 app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+  res.send(getHtml(articleTwoContent));
 });
 
 app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+  res.send(getHtml(articleThreeContent));
 });
 
 
