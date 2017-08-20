@@ -86,7 +86,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:articleName', function (req, res) {
-  res.send(getHtml(article[articleName]));
+    articleName = req.param.articleName;
+    res.send(getHtml(article[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
